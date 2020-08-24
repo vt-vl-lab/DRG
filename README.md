@@ -77,7 +77,7 @@ bash ./scripts/download_drg_models.sh
 ### Citation
 If you find this code useful for your research, please consider citing the following papers:
 
-	@inproceedings{gao2020DRG,
+	@inproceedings{Gao-ECCV-DRG,
 	    author    = {Gao, Chen and Xu, Jiarui and Zou, Yuliang and Huang, Jia-Bin}, 
 	    title     = {DRG: Dual Relation Graph for Human-Object Interaction Detection}, 
 	    booktitle = {European Conference on Computer Vision},
