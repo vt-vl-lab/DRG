@@ -84,12 +84,12 @@ If you find this code useful for your research, please consider citing the follo
 	    year      = {2020}
 	}
 
-    @inproceedings{gao2018ican,
-    author    = {Gao, Chen and Zou, Yuliang and Huang, Jia-Bin}, 
-    title     = {iCAN: Instance-Centric Attention Network for Human-Object Interaction Detection}, 
-    booktitle = {British Machine Vision Conference},
-    year      = {2018}
-    }
+	@inproceedings{gao2018ican,
+	    author    = {Gao, Chen and Zou, Yuliang and Huang, Jia-Bin}, 
+	    title     = {iCAN: Instance-Centric Attention Network for Human-Object Interaction Detection}, 
+	    booktitle = {British Machine Vision Conference},
+	    year      = {2018}
+	}
 
 ### Acknowledgement
 This code follows the implementation architecture of [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark), [iCAN](https://github.com/vt-vl-lab/iCAN) and [No Frills](https://github.com/BigRedT/no_frills_hoi_det).
