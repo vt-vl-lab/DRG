@@ -1,6 +1,6 @@
 MODEL:
   META_ARCHITECTURE: "appearance_branch"
-  WEIGHT: "/home/jiaruixu/git/SSAR_FPN_Pytorch/pretrained_model/e2e_faster_rcnn_R_50_FPN_1x.pth" # only use backbone here, "catalog://ImageNetPretrained/MSRA/R-50"
+  WEIGHT: "pretrained_model/e2e_faster_rcnn_R_50_FPN_1x.pth" # only use backbone here
   BACKBONE:
     CONV_BODY: "R-50-FPN"
   RESNETS:
