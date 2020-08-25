@@ -33,6 +33,8 @@ export INSTALL_DIR=$PWD
 cd $INSTALL_DIR
 git clone https://github.com/NVIDIA/apex.git
 cd apex
+# Need to use this version
+git checkout f3a960f80244cf9e80558ab30f7f7e8cbf03c0a0
 # For GPU usage
 python setup.py install --cuda_ext --cpp_ext
 # For CPU usage
