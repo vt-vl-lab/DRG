@@ -2,6 +2,7 @@
 
 # Download training data
 echo "Downloading training data..."
+mkdir -p Data
 python scripts/Download_data.py 1-0oEO1ZikKR_JYAakYb2ejfWVXd9CTlI Data/action_index.json
 python scripts/Download_data.py 1Fg_3n6lcImQc6WhJ69XHzZmfTt9-PZL_ Data/prior_mask_1.pkl
 python scripts/Download_data.py 1dtFAbgRkaPB8C3bkiyZep9s43jpMIcUL Data/fastText_new.pkl
