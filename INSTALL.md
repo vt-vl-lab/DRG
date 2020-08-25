@@ -40,6 +40,6 @@ python setup.py install --cpp_ext
 
 # install DRG
 cd $INSTALL_DIR
-git clone https://github.com/jiaruixu/DRG.git
+git clone https://github.com/vt-vl-lab/DRG.git
 cd DRG && make
 ```
