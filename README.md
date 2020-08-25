@@ -69,14 +69,21 @@ bash ./scripts/download_data.sh
     ```Shell
     bash ./scripts/test_HICO.sh $APP_ITER_NUMBER $HUMAN_SP_ITER_NUMBER $OBJECT_SP_ITER_NUMBER
     ```
+
 ### DRG Pretrained Weights
 Download DRG trained weights.
 ```Shell
 bash ./scripts/download_drg_models.sh
 ```
 
+### Object Detection
+For a simple demo, you can try
+```Shell
+python demo/demo_obj_det.py
+```
+Currently, we only support Faster R-CNN with ResNet-R50-FPN backbone.
+
 ### TODO
-- [ ] Object detection part
 - [ ] Video demo generation code
 
 ### Citation
