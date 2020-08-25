@@ -44,6 +44,11 @@ bash ./scripts/download_data.sh
     ```
 
 ### Train
+0. Down pre-trained Faster R-CNN model weights for initialization
+    ```Shell
+    bash ./scripts/download_frcnn.sh
+    ```
+
 1. Train on V-COCO
     ```Shell
     bash ./scripts/train_VCOCO.sh
