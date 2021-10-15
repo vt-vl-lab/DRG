@@ -23,8 +23,6 @@ def run_summary_op(event_summaries, score_summaries=None, val=False):
     Run the summary operator: feed the placeholders with corresponding newtork outputs(activations)
     """
     summaries = []
-    # # Add image gt
-    # summaries.append(add_gt_image_summary())
     # Add event_summaries
     for key, var in event_summaries.items():
         summaries.append(tb.summary.scalar(key, var.item()))
@@ -126,8 +124,6 @@ def do_train(
         optimizer.zero_grad()
         # Note: If mixed precision is not used, this ends up doing nothing
         # Otherwise apply loss scaling for mixed-precision recipe
-        # with amp.scale_loss(losses, optimizer) as scaled_losses:
-        #     scaled_losses.backward()
         with amp.scale_loss(loss_dict['total_loss'], optimizer) as scaled_losses:
             scaled_losses.backward()
         optimizer.step()
@@ -183,12 +179,8 @@ def do_train(
                         elif isinstance(blobs_val[key], tuple):
                             blobs_val[key] = [boxlist.to(device) for boxlist in blobs_val[key]]
                     images_val = images_val.to(device)
-                    # targets_val = [target.to(device) for target in targets_val
                     loss_dict_val, score_summaries_val = model(images_val, blobs_val, 'val')
-                    # losses = sum(loss for loss in loss_dict.values())
                     loss_dict_reduced_val = reduce_loss_dict(loss_dict_val)
-                    # losses_reduced = sum(loss for loss in loss_dict_reduced.values())
-                    # meters_val.update(loss=losses_reduced, **loss_dict_reduced)
                     meters_val.update(**loss_dict_reduced_val)
 
                     for k in loss_dict_reduced_val.keys():
