@@ -100,7 +100,8 @@ def compute_pr(y_true, y_score, npos):
     sorted_y_true = [y for y, _ in
                      sorted(zip(y_true, y_score), key=lambda x: x[1], reverse=True)]
     tp = np.array(sorted_y_true)
-    fp = ~tp
+    dtype = tp.dtype
+    fp = (~tp.astype(np.bool)).astype(dtype)
     tp = np.cumsum(tp)
     fp = np.cumsum(fp)
     if npos == 0:
@@ -115,7 +116,8 @@ def compute_normalized_pr(y_true, y_score, npos, N=196.45):
     sorted_y_true = [y for y, _ in
                      sorted(zip(y_true, y_score), key=lambda x: x[1], reverse=True)]
     tp = np.array(sorted_y_true)
-    fp = ~tp
+    dtype = tp.dtype
+    fp = (~tp.astype(np.bool)).astype(dtype)
     tp = np.cumsum(tp)
     fp = np.cumsum(fp)
     if npos == 0:
