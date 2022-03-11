@@ -27,12 +27,16 @@ def run_test(
             for app_this_pair in app_detect_this_image_list:
                 # human box and object box are the same
                 if np.all(sp_this_pair[0] == app_this_pair[0]) and np.all(sp_this_pair[1] == app_this_pair[1]):
-                    assert sp_this_pair[2][0] == app_this_pair[2][0] # object class is the same
+                    #assert sp_this_pair[2][0] == app_this_pair[2][0] # object class is the same
+                    if sp_this_pair[2][0] != app_this_pair[2][0]:
+                        continue
                     sp_this_pair[3] = sp_this_pair[3] * app_this_pair[3]
                     break
             for object_this_pair in sp_object_detect_this_image_list:
                 if np.all(sp_this_pair[0] == object_this_pair[0]) and np.all(sp_this_pair[1] == object_this_pair[1]):
-                    assert sp_this_pair[2][0] == object_this_pair[2][0]  # object class is the same
+                    #assert sp_this_pair[2][0] == object_this_pair[2][0]  # object class is the same
+                    if sp_this_pair[2][0] != object_this_pair[2][0]:
+                        continue
                     sp_this_pair[3] = sp_this_pair[3] * object_this_pair[3] * sp_this_pair[5]
                     break
 
