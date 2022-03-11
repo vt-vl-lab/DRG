@@ -77,15 +77,8 @@ bash ./scripts/download_data.sh
     bash ./scripts/test_HICO_ft.sh
     ```
 
-**NOTE:** If you wish the use the same detector for a fair comparison, you can replace the provided fine-tuned detector with your own detector with the following steps:
+**NOTE:** If you wish the use the same detector for a fair comparison, see [here](DETECTOR.md).
 
-1. Generate a detection file in `.pkl`, following the iCAN format [here](https://github.com/vt-vl-lab/iCAN/blob/master/misc/Object_Detector.py).
-2. Update the path of your detector file in default config [here](https://github.com/vt-vl-lab/DRG/blob/master/maskrcnn_benchmark/config/paths_catalog.py#L98) and [here](https://github.com/vt-vl-lab/DRG/blob/master/maskrcnn_benchmark/config/paths_catalog.py#L135).
-
-You can download some pre-computed fine-tuned detector pkl files below (we did not fine-tune these models, but only provide the link or extract the results) 
-
-- From [VCL](https://github.com/zhihou7/VCL): [R101-FPN](https://drive.google.com/file/d/1RgWNoc-lk8HMlcttzLghPg8LAPCdmCCG/view?usp=sharing)
-- From [UPT](https://github.com/fredzzhang/upt): [DETR-R50](https://filebox.ece.vt.edu/~ylzou/HOI/Test_HICO_detr-r50-hicodet.pkl), [DETR-R101](https://filebox.ece.vt.edu/~ylzou/HOI/Test_HICO_detr-r101-hicodet.pkl), [DETR-R101-DC5](https://filebox.ece.vt.edu/~ylzou/HOI/Test_HICO_detr-r101-dc5-hicodet.pkl).
 
 ### DRG Pretrained Weights
 Download DRG trained weights.
@@ -100,8 +93,6 @@ python demo/demo_obj_det.py
 ```
 Currently, we only support Faster R-CNN with ResNet-R50-FPN backbone.
 
-### TODO
-- [ ] Video demo generation code
 
 ### Citation
 If you find this code useful for your research, please consider citing the following papers:
